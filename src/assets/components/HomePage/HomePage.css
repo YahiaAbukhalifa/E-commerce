@@ -90,3 +90,19 @@ to {
   letter-spacing: 0.3px;
   padding: 10px;
 }
+
+@media (max-width:640px) {
+    .main-img{
+        display: none;
+    }
+    .main{
+        display: flex;
+        text-align: right;
+        width: 100%;
+        padding: 0;
+        align-items: center;
+    }
+    .main-info {
+        width: 100%;
+    }
+}

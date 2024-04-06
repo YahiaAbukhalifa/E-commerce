@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import {FaShoppingCart } from 'react-icons/fa'; 
 import { BsArrowLeftRight } from 'react-icons/bs'; 
 import logo from "../../img/logo.jpg";
-import "./Header.css"
+import "./Header.css";
+import { MdFilterList } from "react-icons/md";
+
 
 const Header = ({ setActiveLinkProp, category }) => {
   const [activeLink, setActiveLink] = useState('');
@@ -46,20 +48,18 @@ const Nav = () => {
   };
 
   return (
-    <nav id="nav" className='nav'>
+    <nav id="nav" className={`nav`}>
       <div className="navWrapper">
         <a href="/" id="logo">Townteam</a>
         <div className="right">
           <div id="nav-icon" onClick={handleMenuClick}>
-            <BsArrowLeftRight />
-            <BsArrowLeftRight />
-            <BsArrowLeftRight />
+            <MdFilterList className={`${isMenuOpen ? 'open' : ''}`}/>
           </div>
-          <div className={`overlay ${isMenuOpen ? 'open' : ''}`} id="overlay">
+          <div className={`overlay nav ${isMenuOpen ? 'open' : ''}`}>
             <div className="overlayContent">
-              <a href="/" className="overlay-a">الرئيسية</a>
-              <a href="/#/products" className="overlay-a">اشتري الان</a>
-              <a href="/" className="overlay-a">تسجيل </a>
+              <a href="/" className={`overlay-a ${isMenuOpen ? 'open' : ''}`}>الرئيسية</a>
+              <a href="/#/products" className={`overlay-a ${isMenuOpen ? 'open' : ''}`}>اشتري الان</a>
+              <a href="/" className={`overlay-a ${isMenuOpen ? 'open' : ''}`}>تسجيل </a>
             </div>
           </div>
         </div>

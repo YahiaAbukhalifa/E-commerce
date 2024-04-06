@@ -211,3 +211,9 @@ body{
 .product-actions > svg , a {
   cursor: pointer;
 }
+
+@media (max-width: 640px) {
+  .product-filter {
+    margin: 20% auto;
+  }
+}
